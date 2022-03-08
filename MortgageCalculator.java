@@ -14,10 +14,10 @@ class Mortgage {
         int n = loan_years * 12;
         double r = interest_rate/100;
         int P = sale_price - down_payment;
-        double top = r * Math.pow(1+r, n);
-        double bottom = Math.pow(1+r, n) - 1;
+        double x = r * Math.pow(1+r, n);
+        double y = Math.pow(1+r, n) - 1;
         NumberFormat M = NumberFormat.getCurrencyInstance();
-        String Mortgage = M.format(P*(top/bottom));
+        String Mortgage = M.format(P*(x/y));
         System.out.print("Monthly Mortgage Payment: " +Mortgage);
     }
 }
